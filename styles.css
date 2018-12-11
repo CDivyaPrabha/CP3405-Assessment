@@ -1,0 +1,228 @@
+.menuBar{
+    border-color: black;
+    background-color: black;
+    overflow: hidden;
+    height: 130px;
+}
+
+.menuBar a{
+    color: white;
+    text-align: center;
+    padding-left: 100px;
+    text-decoration: none;
+    font-size: 30px;
+    margin-top: 25px;
+    vertical-align: center;
+}
+
+.logo{
+    float: left;
+    padding-left: 50px;
+}
+
+.menuBar img{
+    margin-top: 25px;
+}
+
+.menuImage{
+    position: relative;
+    text-align: center;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.textOnImage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+}
+
+.sign{
+    background-color: white;
+    border: black;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-top: 25px;
+    vertical-align: center;
+}
+
+.homeDiv{
+    border-color: black;
+    overflow: hidden;
+    background-color: lightgray;
+    padding: 10px;
+    height: 130px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.homeImage{
+    float: left;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+
+
+
+
+.navbar{
+    background-color: black;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+.navbar a{
+    color: white;
+    text-align: center;
+    padding-left: 100px;
+    text-decoration: none;
+    font-size: 25px;
+    display: inline;
+    border-radius: 25px;
+}
+
+.navbar img{
+    position: absolute;
+    margin-left: -200px;
+    margin-top: -18px;
+}
+
+.navbar button{
+    width: 100px;
+    height: 40px;
+}
+
+.student {
+    width: 48%;
+    float: left;
+    border-right: #969696;
+    border-right-width: 10px;
+    border-right-style:solid ;
+    padding-bottom: 280px;
+}
+
+.student p{
+    padding-top: 100px;
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.student td{
+    font-size: 25px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+}
+
+.student table{
+    font-size: 25px;
+    padding-left: 40px;
+}
+
+.student a{
+    float: right;
+    padding-right: 80px;
+    width: 100px;
+    height: 40px;
+}
+
+.student button{
+    font-size: 20px;
+    background-color: black;
+    color:white;
+}
+
+.employer{
+    width:45%;
+    float: right;
+}
+
+.employer p{
+    padding-top: 100px;
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 30px;
+}
+
+.employer td{
+    font-size: 25px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+}
+
+.employer button{
+    font-size: 20px;
+    background-color: black;
+    color:white;
+}
+
+.employer a{
+    float: right;
+    padding-right: 100px;
+}
+
+
+
+
+
+.create{
+    width: 50%;
+    float: left;
+}
+
+.create p{
+    font-size: 40px;
+    padding-left: 40px;
+}
+
+.create table{
+    padding-left: 40px;
+}
+
+.create td{
+    font-size:25px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+}
+
+.create choice1 {
+    font-size: 18px;
+}
+
+.create choice2{
+    font-size: 18px;
+}
+
+.termsandcondition{
+    padding-top: 60px;
+    width: 50%;
+    float: right;
+}
+
+.termsandcondition caption{
+    font-size: 18px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.termsandcondition button{
+    font-size: 20px;
+    background-color: black;
+    color:white;
+}
