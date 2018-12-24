@@ -94,11 +94,12 @@
     font-size: 25px;
     display: inline;
     border-radius: 25px;
+    margin-left: 15px;
 }
 
 .navbar img{
     position: absolute;
-    margin-left: -200px;
+    margin-left: -145px;
     margin-top: -18px;
 }
 
