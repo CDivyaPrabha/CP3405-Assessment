@@ -1,0 +1,26 @@
+Metadata-Version: 1.1
+Name: wtforms-webwidgets
+Version: 0.0.10
+Summary: Additional Widgets for WTForms for common web libraries
+Home-page: https://github.com/nickw444/wtforms-webwidgets
+Author: Nick Whyte
+Author-email: nick@nickwhyte.com
+License: UNKNOWN
+Description: WTForms-Webwidgets
+        ==================
+        This package aims to one day eventually contain comprehensive widgets for all the
+        common web UI frameworks.
+        
+        Currently this module contains widgets for:
+         
+            * Bootstrap
+        
+        `View the Full Documentation at ReadTheDocs <http://wtforms-webwidgets.readthedocs.org/en/latest/>`_
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Environment :: Web Environment
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 2.6

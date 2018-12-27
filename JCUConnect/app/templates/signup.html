@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <title>JCUConnect</title>
+</head>
+<body>
+<div class="navbar">
+    <img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo">
+    <a href="index.html">Home</a>
+    <a href="">Jobs</a>
+    <a href="">Contact Us</a>
+    <a href="initializeAccount.html"><button class="signin">Sign In</button></a>
+    <a href="signup.html"><button class="signup">Sign Up</button></a>
+</div>
+<form action="{{ url_for('signup') }}" method="post">
+    <div class="create">
+        <p>Create a New Account</p>
+            {{ form.csrf_token }}
+            <table width="600" border="0">
+                <tbody>
+                <tr>
+                    <td width="400">{{ form.username.label }}</td>
+                    <td>{{ form.username(size=50) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.password.label }}</td>
+                    <td>{{ form.password(size=50) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.email.label }}</td>
+                    <td>{{ form.email(size=50) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.designation.label }}</td>
+                    <td>{{ form.designation(size=50) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.remember_me.label }}</td>
+                    <td>{{ form.remember_me(size=50) }} </td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
+
+    <div class="termsandcondition">
+    <table width="600" border="1">
+        <tbody>
+        <tr>
+            <td width="477"><caption>Terms and Conditions</caption></td>
+        </tr>
+        <tr>
+            <td>
+                This JCUConnect website contained here in on this webpage, shall govern your use of this website, including all pages within this website (collectively referred to herein below as this “Website”). These Terms apply in full force and effect to your use of this Website and by using this Website, you expressly accept all terms and conditions contained herein in full. You must not use this Website, if you have any objection to any of these Website Standard Terms And Conditions.
+                This Website is not for use by any minors (defined as those who are not at least 18 years of age), and you must not use this Website if you a minor.<br><br>
+
+                These Terms and Conditions ("Agreement") governs the use of the services ("Service") that are made available by JCUConnect. These Terms and Conditions represent the whole agreement and understanding between Website.com and the individual or entity who subscribes to our service ("Subscriber" or "you").
+<br><br>
+PLEASE READ THIS AGREEMENT CAREFULLY. By submitting your application and by your use of the Service, you agree to comply with all of the terms and conditions set out in this Agreement. Website.com may terminate your account at any time, with or without notice, for conduct that is in breach of this Agreement, for conduct that JCUConnect believes is harmful to its business, or for conduct where the use of the Service is harmful to any other party.
+
+JCUConnect may, in its sole discretion, change or modify this Agreement at any time, with or without notice. Such changes or modifications shall be made effective for all Subscribers upon posting of the modified Agreement to this web. You are responsible to read this document from time to time to ensure that your use of the Service remains in compliance with this Agreement.
+            </td>
+        </tr>
+        </tbody>
+    </table>
+        <table width="600" border="0">
+        <tbody>
+        <tr>
+            <td width="400"> {{ form.checkbox(size=50) }} {{ form.checkbox.label }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.submit }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</form>
+</body>
+</html>
