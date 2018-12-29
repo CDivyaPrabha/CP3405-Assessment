@@ -1,5 +1,7 @@
 from flask_wtf import FlaskForm, widgets
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField
+from flask_wtf.file import FileField, FileRequired, FileAllowed
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField, TextAreaField, SelectField
+from wtforms.widgets import TextArea
 from wtforms.widgets.core import CheckboxInput, ListWidget
 from wtforms.validators import DataRequired, Email, Length, InputRequired
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -15,15 +17,23 @@ class SignUpForm(FlaskForm):
 
 
 class StudentLoginForm(FlaskForm):
-    student_username = StringField('Username')
-    student_password = PasswordField('Password')
+    student_username = StringField('Username', validators=[DataRequired()])
+    student_password = PasswordField('Password', validators=[DataRequired()])
     student_submit = SubmitField('Sign In')
 
 
 class EmployerLoginForm(FlaskForm):
-    employer_username = StringField('Username')
-    employer_password = PasswordField('Password')
+    employer_username = StringField('Username', validators=[DataRequired()])
+    employer_password = PasswordField('Password', validators=[DataRequired()])
     employer_submit = SubmitField('Sign In')
+
+
+# class JobForm(FlaskForm):
+#     company_name = StringField('Company\'s name', validators=[DataRequired()])
+#     company_picture = FileField('Picture', validators=[FileAllowed(['jpg', 'png'], 'Images only!'), FileRequired(u'File was empty!')])
+#     job_description = TextAreaField('Description', validators=[DataRequired()])
+#     job_type = SelectField('Type of Job', choices=['Full-time job', 'Part-time job', 'Contract-based job'])
+#     job_requirements = TextAreaField('Requirements', validators=[DataRequired()])
 
 
 class User():

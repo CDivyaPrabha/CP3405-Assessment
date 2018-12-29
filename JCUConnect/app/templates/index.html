@@ -9,11 +9,11 @@
 <div class="menuBar">
     <img class="logo" src="../static/images/circle.png" height="" width="" alt="JCUConnect Logo">
     <img src="../static/images/text.png" height="" width="" alt="JCUConnect text">
-    <a>Home</a>
+    <a href={{ url_for('index') }}>Home</a>
     <a>Jobs</a>
     <a>Contact Us</a>
-    <button class="sign">Sign In</button>
-    <button class="sign">Sign Up</button>
+    <a href={{ url_for('login') }}><button class="signin">Sign In</button></a>
+    <a href={{ url_for('signup') }}><button class="signup">Sign Up</button></a>
 </div>
 <div class="menuImage">
     <img src="../static/images/buildings.jpg" height="500" width="" alt="Picture of buildings" style = width:100%>
