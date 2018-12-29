@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <title>JCUConnect</title>
+</head>
+<body>
+<div class="navbar">
+    <img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo">
+    <a href={{ url_for('index') }}>Home</a>
+    <a href="">Jobs</a>
+    <a href="">Contact Us</a>
+    <a href={{ url_for('login') }}><button class="signin">Sign In</button></a>
+    <a href={{ url_for('signup') }}><button class="signup">Sign Up</button></a>
+</div>
+
+<form action="{{ url_for('login') }}" method="post">
+<div class="student">
+    <p>Sign in as JCU Student</p>
+    {{ student_form.csrf_token }}
+        <table width="477" border="0">
+            <tbody>
+            <tr>
+                <td width="200">{{ student_form.student_username.label }}</td>
+                <td width="399">{{ student_form.student_username(size=50) }}</td>
+            </tr>
+            <tr>
+                <td>{{ student_form.student_password.label }}</td>
+                <td>{{ student_form.student_password(size=50) }}</td>
+            </tr>
+            <tr>
+                <td >{{ student_form.student_submit(class_="sign_inbutton") }}</td>
+            </tr>
+            </tbody>
+        </table>
+</div>
+</form>
+
+<form action="{{ url_for('login') }}" method="post">
+<div class="employer">
+    <p>Sign in as Employer</p>
+    {{ employer_form.csrf_token }}
+        <table width="477" border="0">
+            <tbody>
+            <tr>
+                <td width="200">{{ employer_form.employer_username.label }}</td>
+                <td width="399">{{ employer_form.employer_username(size=50) }}</td>
+            </tr>
+            <tr>
+                <td>{{ employer_form.employer_password.label }}</td>
+                <td>{{ employer_form.employer_password(size=50) }}</td>
+            </tr>
+            <tr>
+                <td>{{ employer_form.employer_submit(class_="sign_inbutton") }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+
+</body>
+</html>
