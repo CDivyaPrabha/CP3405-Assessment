@@ -323,11 +323,26 @@
 	padding-bottom: 5%;
 	
 }
-.submit{
-	
-}
+
 .reset{
-	margin-left: 88%;
+	margin-left: 85%;
 	margin-bottom: 1%;
 	margin-right: 1%;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+input[type=reset] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
 }
