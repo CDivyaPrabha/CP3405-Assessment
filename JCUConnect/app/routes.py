@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, request, url_for
 from app import app
-from app.forms import SignUpForm, StudentLoginForm, EmployerLoginForm, User#, JobForm
+from app.forms import SignUpForm, StudentLoginForm, EmployerLoginForm, User, JobForm
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
@@ -31,7 +31,6 @@ def index():
     else:
         user = "guest"
     posts = user_collection.find()
-
     return render_template('index.html', title='Home', user=user, posts=posts)
 
 
@@ -58,7 +57,10 @@ def signup():
         user_obj = User(user['Username'])
         login_user(user_obj)
         flash("Logged in successfully!", category='success')
-        return "<h1>Signed in successfully!"#go to student/employer home page
+        if user['Designation']=="1":
+            return "<h1>Signed in successfully!"#go to student home page
+        elif user['Designation']=="2":
+            return redirect(url_for('employer_home_page'))
     return render_template('signup.html', form=form)
 
 
@@ -66,35 +68,58 @@ def signup():
 def login():
     student_form = StudentLoginForm()
     employer_form = EmployerLoginForm()
+
     if request.method == 'POST':
         if student_form.validate_on_submit() and student_form.student_submit.data:
             user = user_collection.find_one({"Username": student_form.student_username.data})
-            print(user)
-            if user and User.validate_login(user['Password'], student_form.student_password.data):
+            if user and User.validate_login(user['Password'], student_form.student_password.data) and user['Designation']=="1":
                 user_obj = User(user['Username'])
                 login_user(user_obj)
                 flash("Logged in successfully!", category='success')
                 return "<h1>Signed in successfully!"# go to student home page
             flash("Wrong username or password!", category='error')
+
         elif employer_form.validate_on_submit() and employer_form.employer_submit.data:
             user = user_collection.find_one({"Username": employer_form.employer_username.data})
-            if user and User.validate_login(user['Password'], employer_form.employer_password.data):
+            if user and User.validate_login(user['Password'], employer_form.employer_password.data) and user['Designation']=="2":
                 user_obj = User(user['Username'])
                 login_user(user_obj)
                 flash("Logged in successfully!", category='success')
-                return "<h1>Signed in successfully!"# go to employer home page
+                return redirect(url_for('employer_home_page'))# go to employer home page
             flash("Wrong username or password!", category='error')
     return render_template('login.html', title='login', student_form=student_form, employer_form=employer_form)
 
 
-# @app.route('/postjob', methods=['GET', 'POST'])
-# def postjob():
-#     form = JobForm()
-#     if form.validate_on_submit():
+@app.route('/postjob', methods=['GET', 'POST'])
+def postjob():
+    form = JobForm()
+    if request.method == 'POST' and form.validate_on_submit():
+        picture_name = form.company_picture.data.filename
+        form.company_picture.data.save('static/upload_images/' + picture_name)
+        picture_path = "static/upload_images/" + picture_name
+        post_data = {
+            'Company Name': form.company_name.data,
+            'Company Picture': picture_path,
+            'Job Description': form.job_description.data,
+            'Job Type': form.job_type.data,
+            'Job Requirements': form.job_requirements.data
+        }
+        job_collection.insert_one(post_data)
+        return redirect(url_for('display_employer_jobs'))
+    return render_template('job_form.html', form=form)
 
 
+@app.route('/display_employer_jobs')
+def display_employer_jobs():
+    return render_template('posting_jobs.html')
 
-@app.route('/logout', methods = ['GET'])
+
+@app.route('/employer_home_page')
+def employer_home_page():
+    return render_template('employer_home.html')
+
+
+@app.route('/logout', methods=['GET'])
 @login_required
 def logout():
     logout_user()

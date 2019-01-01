@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <link rel="shortcut icon" href="../static/images/circle.png">
+    <title>JCUConnect</title>
+</head>
+<body>
+<div class="navbar">
+    <img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo">
+    <a href={{ url_for('employer_home_page') }}>Home</a>
+    <a href={{ url_for('display_employer_jobs') }}>Jobs</a>
+    <a href="">Contact Us</a>
+    <a href={{ url_for('logout') }}><button class="Sign out">Sign out</button></a>
+</div>
+<form action="{{ url_for('postjob') }}" method="post">
+
+<div class="jobform">
+    {{ form.csrf_token }}
+	<p class="comname_Cen">{{ form.company_name.label }}{{ form.company_name(size=30) }} </p>
+	<div class="picture">
+  <h3>{{ form.company_picture.label }}</h3>
+</div>
+<div class="description">
+<h3>{{ form.job_description.label }}</h3>
+</div>
+<div class="description_box">
+    {{ form.job_description }}
+{#<textarea id="description" rows="8" cols="50" placeholder="Description of the job..." required></textarea>#}
+
+</div>
+<div class="requirement">
+	<h3>{{ form.job_requirements.label }}</h3>
+</div>
+<div class="requirement_box">
+    {{ form.job_requirements }}
+{#<textarea id="requirement" rows="8" cols="50" placeholder="Requirements are....." required></textarea>#}
+
+</div>
+<div class="submitpic">
+    <p>{{ form.company_picture }}</p>
+</div>
+{#      <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>#}
+{#<p><img id="output" width="200" /></p>#}
+{#</div>#}
+{#<p class="upload" ><label for="file" style="cursor: pointer;">Upload Image</label></p>#}
+
+<div class="type">
+<h3>{{ form.job_type.label }} </h3></div>
+<div class="typeofjob">
+    {{ form.job_type }}
+
+{#<select class style="width: 21%;" required>#}
+{#  <option value="Part-time">Part-time Job</option>#}
+{#  <option value="Full-time">Full-time Job</option>#}
+{#  <option value="Contract">Contract</option>#}
+{#</select>#}
+</div>
+
+<input class="reset" type="reset">{{ form.post_job }}
+</div>
+</form>
+
+
+<script src="../static/scripts/pictureupload.js"></script>
+</body>
+</html>
+
