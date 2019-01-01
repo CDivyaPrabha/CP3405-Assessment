@@ -2,25 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-    <title>JCUConnect</title>
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <title>Home | JCUConnect</title>
 </head>
 <body>
-<div class="menuBar">
-    <img class="logo" src="images/circle.png" height="" width="" alt="JCUConnect Logo">
-    <img src="images/text.png" height="" width="" alt="JCUConnect text">
-    <a>Home</a>
+<div class="navbar">
+    <img class="logo" src="../static/images/jcuconnectlogo.png" height="" width="" alt="JCUConnect Logo">
+    <a href={{ url_for('index') }}>Home</a>
     <a>Jobs</a>
     <a>Contact Us</a>
-    <button class="sign">Sign In</button>
-    <button class="sign">Sign Up</button>
+    <a href={{ url_for('login') }}><button class="signin">Sign In</button></a>
+    <a href={{ url_for('signup') }}><button class="signup">Sign Up</button></a>
 </div>
 <div class="menuImage">
-    <img src="images/buildings.jpg" height="" width="" alt="Picture of buildings" style = width:100%>
+    <img src="../static/images/buildings.jpg" height="500" width="" alt="Picture of buildings" style = width:100%>
     <div class="textOnImage">It is a short path from education to career but a long journey. Let us be the bridge to
         reach your perfect destination.</div>
 </div>
-<img class="homeImage" src="images/JY%20Group.jpg" height="" width="" alt="JY Group icon">
+<img class="homeImage" src="../static/images/JY%20Group.jpg" height="" width="" alt="JY Group icon">
 <div class="homeDiv">
     <h3>JY Group</h3>
     <p>Our Sales and Marketing Support is different from the rest! We are able to provide you with constant supply
@@ -28,7 +27,7 @@
         market leader in corporate tie-ups and event marketing, we have been supporting our staff in their sales
         prospects since 1999.</p>
 </div>
-<img class="homeImage" src="images/Singapore%20Press%20Holdings.jpg" height="" width="" alt="Singapore Press Holdings">
+<img class="homeImage" src="../static/images/Singapore%20Press%20Holdings.jpg" height="" width="" alt="Singapore Press Holdings">
 <div class="homeDiv">
     <h3>Singapore Press Holdings</h3>
     <p>We are searching for a new team member who enjoys data driven conversations, delights in uncovering
@@ -36,7 +35,7 @@
         must be extremely detail oriented, with a curious mind and the drive to constantly challenge how data and
         technology can be integrated into a meaningful customer journey.</p>
 </div>
-<img class="homeImage" src="images/Plano%20Pte%20Ltd.jpg" height="" width="">
+<img class="homeImage" src="../static/images/Plano%20Pte%20Ltd.jpg" height="" width="">
 <div class="homeDiv">
     <h3>Plano Pte Ltd</h3>
     <p>Do you have a passion for keeping children healthy and spending less time on their smartphones and devices? Plano

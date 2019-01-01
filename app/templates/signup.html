@@ -2,55 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../static/styles/styles.css">
     <title>JCUConnect</title>
 </head>
 <body>
 <div class="navbar">
-    <img class="logo" src="images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo">
-    <a href="index.html">Home</a>
+    <img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo">
+    <a href={{ url_for('index') }}>Home</a>
     <a href="">Jobs</a>
     <a href="">Contact Us</a>
-    <a href="initializeAccount.html"><button class="signin">Sign In</button></a>
-    <a href="initailizeAccount2.html"><button class="signup">Sign Up</button></a>
+    <a href={{ url_for('login') }}><button class="signin">Sign In</button></a>
+    <a href={{ url_for('signup') }}><button class="signup">Sign Up</button></a>
 </div>
+<form action="{{ url_for('signup') }}" method="post">
+    <div class="create">
+        <p>Create a New Account</p>
+            {{ form.csrf_token }}
+            <table width="600" border="0">
+                <tbody>
+                <tr>
+                    <td width="400">{{ form.username.label }}</td>
+                    <td>{{ form.username(size=50) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.password.label }}</td>
+                    <td>{{ form.password(size=50) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.email.label }}</td>
+                    <td>{{ form.email(size=50) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.designation.label }}</td>
+                    <td>{{ form.designation(size=50) }}</td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
 
-<div class="create">
-    <p>Create a New Account</p>
-
-    <form>
-        <table width="600" border="0">
-            <tbody>
-            <tr>
-                <td width="400">Firstname</td>
-                <td><input type="text" size="50" name="Firstame" id="Firstname">
-                </td>
-            </tr>
-            <tr>
-                <td>Lastname</td>
-                <td><input type="text" size="50" name="Lastname" id="Lastname"></td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td><input type="text" size="50" name="Email" id="Email"></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><input type="text" size="50" name="Password" id="Password"> </td>
-            </tr>
-            <tr>
-                <td width="400">You are a</td>
-                <td><input name="Status" type="radio"> <choice1>Student</choice1><br>
-                    <input name="Gender" type="radio"> <choice2> Employer </choice2>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </form>
-
-</div>
-
-<div class="termsandcondition">
+    <div class="termsandcondition">
     <table width="600" border="1">
         <tbody>
         <tr>
@@ -70,23 +60,17 @@ JCUConnect may, in its sole discretion, change or modify this Agreement at any t
         </tr>
         </tbody>
     </table>
-
-
-    <table width="600" border="0">
+        <table width="600" border="0">
         <tbody>
         <tr>
-            <td>
-                <input name="agree" type="radio"><box1>I agree to the given terms and condition</box1>
-            </td>
+            <td width="400"> {{ form.checkbox(size=50) }} {{ form.checkbox.label }}</td>
         </tr>
         <tr>
-            <td>
-                <input name="notification" type="radio"><box2>I would like to receive notifications on further news and job opportunities</box2>
-            </td>
+            <td>{{ form.submit(class_="create_button") }}</td>
         </tr>
         </tbody>
     </table>
-    <a href=""><button class="createbutton">Create Account</button></a>
 </div>
+</form>
 </body>
 </html>
