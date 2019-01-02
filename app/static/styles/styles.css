@@ -236,3 +236,140 @@
     margin-top:1%;
 }
 
+
+
+
+
+.posting_title{
+    background-color:#000000;
+	color:#FFFFFF;
+	font-size: 120%;
+	width: 20%;
+	text-align: center;
+	margin-left: 2%;
+}
+
+.add_jobs{
+	float: left;
+	margin-right: 2%;
+	width: 43%;
+	height: 50%;
+	border: thin #000000 solid;
+	text-align: center;
+	padding-top:8.8%;
+	padding-bottom: 8.8%;
+	margin-bottom: 5%;
+
+
+}
+
+.jobform {
+	border: thin #000000 solid;
+	margin-bottom: 5%;
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 5%;
+
+}
+.comname_Cen {
+	padding-left: 25%;
+}
+.picture {
+	padding-left: 2%;
+	float: left;
+	width: 40%;
+
+}
+.submitpic{
+	border: thin #000000 solid;
+	width: 20%;
+	margin-left: 8%;
+	padding-left: 1.5%;
+	margin-top: 6%;
+	margin-bottom: 5%;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+}
+.uploadpic {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	padding-top: 10%;
+	padding-bottom: 10%;
+
+
+}
+
+.upload{
+	margin-left: 23%;
+	margin-top:-5%;
+
+}
+
+.typeofjob{
+	margin-bottom: 12%;
+	padding-top: 5%;
+}
+.type {
+	padding-left: 2%;
+	float: left;
+}
+.description{
+	float: right;
+	width: 51.1%;
+}
+.description_box{
+	float: right;
+	padding-right: 3%;
+	margin-right:8%;
+	margin-top: -1.5%;
+	width: 30%;
+	padding-bottom: 5%;
+
+}
+.requirement{
+	float: right;
+
+	margin-top: 20%;
+
+}
+.requirement_box{
+	float: right;
+	margin-right: -40%;
+	margin-top: 24%;
+	width: 30%;
+	padding-bottom: 5%;
+
+}
+
+.reset{
+	margin-left: 85%;
+	margin-bottom: 1%;
+	margin-right: 1%;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=reset] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* Employer page*/
+
+.applicantlist{
+	text-align: center;
+	margin-top: -1%;
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+}
+

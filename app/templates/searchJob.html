@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <link rel="shortcut icon" href="../static/images/circle.png">
+    <title>JCUConnect</title>
+</head>
+<body>
+<div class="navbar">
+    <img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo">
+    <a href="index.html">Home</a>
+    <a href={{ url_for('student_jobs') }}>Jobs</a>
+    <a href="">Contact Us</a>
+    <a href={{ url_for('logout') }}><button class="logout">Logout</button></a>
+</div>
+<br>
+
+
+<div class="searchbar">
+
+    <form>
+        <table border="0">
+            <tr>
+                <td width="450"></td>
+                <td><input type="text" size="70" name="searchInput" id="search"></td>
+                <td><button class="searchLogo"><img src="../static/images/searchlogo.png" width="40%" height="60%"></button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div class="job_list">
+    {% for job in jobs %}
+    <p></p>
+    {% endfor %}
+</div>
+
+</body>
+</html>
