@@ -292,3 +292,59 @@
     width: 350px;
     height: 250px;
 }
+
+.centraliseBar{
+    height: 150px;
+    background-color: lightgrey;
+    position: relative;
+}
+
+.studentPic{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: 1px solid black;
+    position: absolute;
+    z-index: 10;
+    margin-left: 100px;
+    margin-top: 50px;
+    background-color: lightblue;
+}
+
+.personDet{
+    height: 40px;
+    width: 300px;
+    margin-left: 350px;
+    position: absolute;
+    margin-top: 30px;
+}
+
+.editCV{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+.contactD {
+    float: right;
+
+}
+
+.barbottom{
+    height: 2px;
+    width: 700px;
+    border: 1px solid black;
+    background-color: black;
+}
+
+.workExp{
+    margin-top: 250px;
+    margin-left: 100px;
+}
+
+.educationD{
+    margin-left: 100px;
+}
