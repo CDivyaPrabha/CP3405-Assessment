@@ -1,3 +1,8 @@
+.profile{
+    padding-top: 15px;
+   padding-left: 220px;
+}
+
 .logo{
     float: left;
     padding-left: 50px;
@@ -246,5 +251,30 @@
 
 }
 
+.form{
+    text-align: center;
+    padding-bottom: 50px;
+}
 
+.bioform form{
+    padding-top: 50px;
+    text-align: center;
+}
+
+.workform label{
+    padding-left: -150px;
+
+}
+
+.educationform form{
+    padding-bottom: 30px;
+}
+
+input[type=submit], input[type=reset]{
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
 
