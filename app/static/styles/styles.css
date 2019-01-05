@@ -250,17 +250,27 @@
 }
 
 .add_jobs{
-	float: left;
 	margin-right: 2%;
 	width: 43%;
-	height: 50%;
 	border: thin #000000 solid;
 	text-align: center;
-	padding-top:8.8%;
-	padding-bottom: 8.8%;
+	padding-top:8%;
+	padding-bottom: 8%;
 	margin-bottom: 5%;
-    display: inline-block;
-    background-color: aquamarine;
+    max-height: 50%;
+
+}
+
+
+.jobdesignation{
+    float: left;
+    width: 40%;
+
+}
+.typeofjob{
+    float: right;
+    width: 40%;
+
 }
 
 .jobform {
