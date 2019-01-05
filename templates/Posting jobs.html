@@ -22,6 +22,15 @@
 <h1>Posted Jobs</h1>
 </div>
 
+{% for post in posts %}
+<div class="add_jobs">
+<div class="jobdesignation">
+    <p><b> Designation: </b></p>{{ post.Job_Designation }}</div><div class="typeofjob"><p> <b>Type of job:</b></p> {{ post.Job_Type }}</div><p><b>Job Description:</b></p> {{ post.Job_Description }}
+</div>
+{% endfor %}
+
+
+
 <a href="job_form.html"><div class="add_jobs">
 	<img src="../static/images/add1.png">
 	<h1><center>Add Job</center></h1>
