@@ -30,13 +30,19 @@
     </form>
 </div>
 
-<div class="job_list">
-    {% for job in jobs %}
-<div><p>{{ job.Company_Name }}<br>{{ job.Job_Designation }}<br>{{ job.Job_Description }}<br>
-    <img src="{{ job.Company_Picture }}" height="" width=""></p>
+{% for post in posts %}
+<div class="add_jobs">
+<div class="jobdesignation">
+    <p><b> Designation: </b></p>{{ post.Job_Designation }}</div><div class="typeofjob"><p> <b>Type of job:</b></p> {{ post.Job_Type }}</div><p><b>Job Description:</b></p> {{ post.Job_Description }}
 </div>
 {% endfor %}
+
+<a href={{ url_for('postjob') }}>
+    <div class="add_jobs">
+	<img src="../static/images/add1.png" height="104px" width="104px">
+	<h2><center>Add Job</center></h2>
 </div>
+</a>
 
 </body>
 </html>
