@@ -14,12 +14,13 @@
     <a href="">Contact Us</a>
     <a href={{ url_for('logout') }}><button class="Sign out">Sign out</button></a>
 </div>
-<form action="{{ url_for('postjob') }}" method="post">
+
+<form action="{{ url_for('postjob') }}" method="post" enctype='multipart/form-data'>
 
 <div class="jobform">
     {{ form.csrf_token }}
-	<p class="comname_Cen">{{ form.company_name.label }}{{ form.company_name(size=30) }} </p>
-	<div class="picture">
+   <p class="comname_Cen">{{ form.company_name.label }}{{ form.company_name(size=30) }} </p>
+   <div class="picture">
         <div>
             {{ form.job_designation.label }}{{ form.job_designation }}
         </div>
@@ -33,7 +34,7 @@
 
 </div>
 <div class="requirement">
-	<h3>{{ form.job_requirements.label }}</h3>
+   <h3>{{ form.job_requirements.label }}</h3>
 </div>
 <div class="requirement_box">
     {{ form.job_requirements }}
@@ -43,12 +44,23 @@
     <p>{{ form.company_picture }}</p>
 </div>
 
-<div class="type">
-<h3>{{ form.job_type.label }} </h3></div>
+    <div class="type">
+<h3>Type of job: </h3></div>
 <div class="typeofjob">
-    {{ form.job_type }}
 
+<select name="job_type" class style="width: 21%;" required>
+  <option value="Part-time">Part-time Job</option>
+  <option value="Full-time">Full-time Job</option>
+  <option value="Contract">Contract</option>
+</select>
 </div>
+
+{#<div class="type">#}
+{#<h3>{{ form.job_type.label }} </h3></div>#}
+{#<div class="typeofjob">#}
+{#    {{ form.job_type }}#}
+{##}
+{#</div>#}
 
 <input class="reset" type="reset">{{ form.post_job }}
 </div>
@@ -58,5 +70,4 @@
 
 </body>
 </html>
-
 

@@ -29,13 +29,13 @@ class EmployerLoginForm(FlaskForm):
 
 
 class JobForm(FlaskForm):
-    company_name = StringField('Company\'s name', validators=[DataRequired()])
-    job_designation = StringField('Designation', validators=[DataRequired()])
-    company_picture = FileField('Picture', validators=[FileAllowed(['jpg', 'png'], 'Images only!'),
+    company_name = StringField('Company\'s Name: ', validators=[DataRequired()])
+    job_designation = StringField('Job Designation: ', validators=[DataRequired()])
+    company_picture = FileField('Picture: ', validators=[FileAllowed(['jpg', 'png'], 'Images only!'),
                                                        FileRequired(u'File was empty!')])
-    job_description = TextAreaField('Description', validators=[DataRequired()], render_kw={"rows": 8, "cols": 50})
-    job_type = SelectField('Type of Job', choices=['Full-time job', 'Part-time job', 'Contract-based job'])
-    job_requirements = TextAreaField('Requirements', validators=[DataRequired()], render_kw={"rows": 8, "cols": 50})
+    job_description = TextAreaField('Description: ', validators=[DataRequired()], render_kw={"rows": 8, "cols": 50})
+    # job_type = SelectField('Type of Job', choices=['Full-time job', 'Part-time job', 'Contract-based job'])
+    job_requirements = TextAreaField('Requirements: ', validators=[DataRequired()], render_kw={"rows": 8, "cols": 50})
     post_job = SubmitField('Post job')
 
 

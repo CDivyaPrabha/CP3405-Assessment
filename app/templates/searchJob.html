@@ -9,7 +9,7 @@
 <body>
 <div class="navbar">
     <img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo">
-    <a href="index.html">Home</a>
+    <a href={{ url_for('student_home_page') }}>Home</a>
     <a href={{ url_for('student_jobs') }}>Jobs</a>
     <a href="">Contact Us</a>
     <a href={{ url_for('logout') }}><button class="logout">Logout</button></a>
@@ -32,8 +32,10 @@
 
 <div class="job_list">
     {% for job in jobs %}
-    <p></p>
-    {% endfor %}
+<div><p>{{ job.Company_Name }}<br>{{ job.Job_Designation }}<br>{{ job.Job_Description }}<br>
+    <img src="{{ job.Company_Picture }}" height="" width=""></p>
+</div>
+{% endfor %}
 </div>
 
 </body>
