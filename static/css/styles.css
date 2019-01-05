@@ -1,21 +1,3 @@
-@charset "utf-8";
-/* CSS Document */
-.menuBar{
-    border-color: black;
-    background-color: black;
-    overflow: hidden;
-    height: 130px;
-}
-
-.menuBar a{
-    color: white;
-    text-align: center;
-    padding-left: 100px;
-    text-decoration: none;
-    font-size: 30px;
-    margin-top: 25px;
-    vertical-align: center;
-}
 
 .logo{
     float: left;
@@ -75,6 +57,10 @@
     margin-left: 30px;
     margin-right: 30px;
 }
+
+
+
+
 
 .navbar{
     background-color: black;
@@ -174,6 +160,10 @@
     padding-right: 100px;
 }
 
+
+
+
+
 .create{
     width: 50%;
     float: left;
@@ -221,7 +211,33 @@
     color:white;
 }
 
-/*New css below*/
+.sign_inbutton{
+    padding:10px 15px;
+    background: black;
+    color: white;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 450%;
+    padding-top: 10px;
+    font-size: 70%;
+}
+.create_button{
+    padding:10px 15px;
+    background: black;
+    color: white;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding-top: 10px;
+    font-size: 70%;
+    margin-top:1%;
+}
+
+
+/*posting jobs page*/
 
 .posting_title{
     background-color:#000000;
@@ -229,22 +245,35 @@
 	font-size: 120%;
 	width: 20%;
 	text-align: center;
-	margin-left: 2%; 
+	margin-left: 2%;
 }
 
 .add_jobs{
-	float: left;
 	margin-right: 2%;
 	width: 43%;
 	height: 50%;
 	border: thin #000000 solid;
 	text-align: center;
-	padding-top:8.8%;
-	padding-bottom: 8.8%;
+	padding-top:8%;
+	padding-bottom: 8%;
 	margin-bottom: 5%;
-		
-	
+
 }
+
+
+.jobdesignation{
+    float: left;
+    width: 40%;
+
+}
+.typeofjob{
+    float: right;
+    width: 40%;
+
+}
+
+
+/*jobform page*/
 
 .jobform {
 	border: thin #000000 solid;
@@ -252,7 +281,7 @@
 	width: 90%;
 	margin-left: 5%;
 	margin-top: 5%;
-	
+
 }
 .comname_Cen {
 	padding-left: 25%;
@@ -261,7 +290,7 @@
 	padding-left: 2%;
 	float: left;
 	width: 40%;
-	
+
 }
 .submitpic{
 	border: thin #000000 solid;
@@ -269,7 +298,7 @@
 	margin-left: 8%;
 	padding-left: 1.5%;
 	margin-top: 6%;
-	margin-bottom: 5%;
+	margin-bottom: 1%;
 	padding-top: 0.5%;
 	padding-bottom: 0.5%;
 }
@@ -278,20 +307,22 @@
 	margin-bottom: 5%;
 	padding-top: 10%;
 	padding-bottom: 10%;
-	
-	
+
+
 }
 
 .upload{
 	margin-left: 23%;
 	margin-top:-5%;
-	
+
 }
 
 .typeofjob{
 	margin-bottom: 12%;
 	padding-top: 5%;
+    margin: 10%;
 }
+
 .type {
 	padding-left: 2%;
 	float: left;
@@ -307,13 +338,13 @@
 	margin-top: -1.5%;
 	width: 30%;
 	padding-bottom: 5%;
-	
+
 }
 .requirement{
 	float: right;
-	
+
 	margin-top: 20%;
-	
+
 }
 .requirement_box{
 	float: right;
@@ -321,7 +352,7 @@
 	margin-top: 24%;
 	width: 30%;
 	padding-bottom: 5%;
-	
+
 }
 
 .reset{
@@ -331,21 +362,21 @@
 }
 
 input[type=submit] {
-    padding:5px 15px; 
-    background:#ccc; 
+    padding:5px 15px;
+    background:#ccc;
     border:0 none;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
 }
 
 input[type=reset] {
-    padding:5px 15px; 
-    background:#ccc; 
+    padding:5px 15px;
+    background:#ccc;
     border:0 none;
     cursor:pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 5px;
 }
 
 /* Employer page*/
@@ -354,4 +385,69 @@ input[type=reset] {
 	text-align: center;
 	margin-top: -1%;
 	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+}
+
+
+
+.homepost{
+    float: left;
+}
+.companyImage{
+    float: left;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.requirements{
+    overflow: hidden;
+    padding: 10px;
+    height: 170px;
+    width: 800px;
+    margin-right: 10px;
+}
+
+.headlinenews{
+    background-color: #d1d1d1;
+    float: right;
+    width:20%;
+    padding-left: 30px;
+    padding-right: 20px;
+
+}
+
+.headlinenews p{
+    text-align: center;
+    padding-bottom: 30px;
+    background-color: #000000;
+    color: white;
+    padding-top: 30px;
+    width:280px;
+
+}
+
+.form{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.bioform form{
+    padding-top: 50px;
+    text-align: center;
+}
+
+.workform label{
+    padding-left: -150px;
+
+}
+
+.educationform form{
+    padding-bottom: 30px;
+}
+
+input[type=submit], input[type=reset]{
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
