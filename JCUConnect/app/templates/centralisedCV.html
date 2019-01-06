@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/styles/styles.css">
+    <link rel="shortcut icon" href="../static/images/circle.png">
+    <title>Your CV</title>
+</head>
+<body>
+
+{#<div class="navbar">#}
+{#    <img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo">#}
+{#    <a href={{ url_for('student_home_page') }}>Home</a>#}
+{#    <a href={{ url_for('student_jobs') }}>Jobs</a>#}
+{#    <a href="">Contact Us</a>#}
+{#    <a href={{ url_for('cv_form') }}><img class="profile" src="../static/images/profile.png" height="45px" width="60px" alt="Profile"></a>#}
+{#    <a href={{ url_for('logout') }}> <button class="signup">Log Out</button></a>#}
+{#</div>#}
+<div class="centraliseBar">
+    <div class="studentPic">
+
+    </div>
+
+    <div class="personDet">
+        <h2> {{ post.Student_name }} </h2>
+        <p> {{ post.Student_education }} <br> {{ post.Student_graduate_year }}</p>
+    </div>
+
+{#    <button id="editCV" class="editCV">EDIT</button>#}
+
+</div>
+
+<div class="contactD">
+    <h3 style="margin-right: 600px">CONTACT</h3>
+    <div class="barbottom">
+    </div>
+    <h3></h3>
+    <p><i>Phone: </i> {{ post.Student_phone }}</p>
+    <p><i>Mobile: </i> {{ post.Student_mobile }}</p>
+    <address>Address: </address>{{ post.Student_address }}
+    <p><i>Email: </i>{{ post.Student_email }}</p>
+
+</div>
+
+<div class="workExp">
+    <h3>WORK EXPERIENCE</h3>
+    <div class="barbottom" style="width: 100%"> </div>
+    <div id="WorkExperi" style="width: 100%; height: 200px">
+        {{ post.Student_work_experience }}
+        {{ post.Student_projects }}
+        {{ post.Student_workshops }}
+    </div>
+
+</div>
+
+<div class="educationD">
+    <h3>EDUCATION</h3>
+    <div class="barbottom" style="width: 100%"></div>
+    <div id="EducatExperi" style="width: 100%; height: 100%">
+        {{ post.Student_education }}
+        {{ post.Student_major }}
+        {{ post.Student_university }}
+        {{ post.Student_university_country }}
+    </div>
+</div>
+
+<div class="educationD">
+    <h3>SKILLS</h3>
+    <div class="barbottom" style="width: 100%"></div>
+    <div id="EducatExperi" style="width: 100%; height: 100%">
+        {{ post.Student_skills }}
+    </div>
+</div>
+
+<div class="educationD">
+    <h3>INTERESTS</h3>
+    <div class="barbottom" style="width: 100%"></div>
+    <div id="EducatExperi" style="width: 100%; height: 100%">
+        {{ post.Student_interests }}
+    </div>
+</div>
+
+
+</body>
+</html>
