@@ -1,6 +1,6 @@
 .profile{
     padding-top: 15px;
-   padding-left: 220px;
+    padding-left: 220px;
 }
 
 .logo{
@@ -278,3 +278,6 @@ input[type=submit], input[type=reset]{
     border-radius: 5px;
 }
 
+.job_list{
+
+}
