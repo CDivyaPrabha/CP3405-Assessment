@@ -145,7 +145,6 @@ def student_home_page():
 @app.route('/student_jobs')
 def student_jobs():
     jobs = job_collection.find()
-    # job_pictures = job_collection.find['Company_Picture']
     return render_template('searchJob.html', jobs=jobs)
 
 
