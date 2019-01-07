@@ -39,6 +39,34 @@ class JobForm(FlaskForm):
     post_job = SubmitField('Post job')
 
 
+class CVForm(FlaskForm):
+    student_name = StringField('Full Name: ', validators=[DataRequired()])
+    student_phone = StringField('Phone: ')
+    student_mobile = StringField('Mobile: ', validators=[DataRequired()])
+    student_email = StringField('Email: ', validators=[DataRequired()])
+    student_address = StringField('Address: ', validators=[DataRequired()])
+
+    student_education = StringField('Education: ', validators=[DataRequired()])
+    student_major = StringField('Major: ')
+    student_university = StringField('University: ', validators=[DataRequired()])
+    student_university_country = StringField('Country: ', validators=[DataRequired()])
+    student_graduate_year = StringField('Study Period: ', validators=[DataRequired()])
+
+    student_work_experience = TextAreaField('Work Experience: ', render_kw={"rows": 8, "cols": 50})
+    student_projects = TextAreaField('Projects Completed: ', render_kw={"rows": 8, "cols": 50})
+    student_workshops = TextAreaField('Workshops, Seminars and Training: ', render_kw={"rows": 8, "cols": 50})
+
+    student_skills = TextAreaField('Skills: ', validators=[DataRequired()], render_kw={"rows": 8, "cols": 50})
+    student_interests = TextAreaField('Interests: ', render_kw={"rows": 8, "cols": 50})
+
+    submit_cv = SubmitField('Submit')
+
+
+class SearchField(FlaskForm):
+    search_text = StringField()
+    search_button = SubmitField()
+
+
 class User():
 
     def __init__(self, username):

@@ -6,14 +6,25 @@
     <title>JCUConnect</title>
 </head>
 <body>
+
 <div class="navbar">
-    <img class="logo" src="../static/images/jcuconnectlogo.png" height="" width="" alt="JCUConnect Logo">
-    <a href={{ url_for('index') }}>Home</a>
-    <a>Jobs</a>
-    <a>Contact Us</a>
-    <a href={{ url_for('login') }}><button class="signin">Sign In</button></a>
-    <a href={{ url_for('signup') }}><button class="signup">Sign Up</button></a>
+    <table class="navtab">
+<tr>
+	<td><div class="imgpla"><img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo"></div></td>
+    <td><a href={{ url_for('index') }}>Home</a></td>
+    <td><a>Jobs</a></td>
+    <td><a>Contact Us</a></td>
+    <td><a href={{ url_for('login') }}><button class="signin">Sign In</button></a></td>
+    <td><a href={{ url_for('signup') }}><button class="signup">Sign Up</button></a></td>
+    </tr>
+</table>
+
 </div>
+
+
+
+
+
 <div class="menuImage">
     <img src="../static/images/buildings.jpg" height="500" width="" alt="Picture of buildings" style = width:100%>
     <div class="textOnImage">It is a short path from education to career but a long journey. Let us be the bridge to

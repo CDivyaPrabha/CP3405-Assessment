@@ -8,33 +8,54 @@
 </head>
 <body>
 <div class="navbar">
-    <img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo">
-    <a href={{ url_for('student_home_page') }}>Home</a>
-    <a href={{ url_for('student_jobs') }}>Jobs</a>
-    <a href="">Contact Us</a>
-    <a href={{ url_for('logout') }}><button class="logout">Logout</button></a>
+    <table class="navtab">
+<tr>
+	<td><div class="imgpla"><img class="logo" src="../static/images/jcuconnectlogo.png"  height="71px" width="180px" alt="JCUConnect Logo"></div></td>
+    <td><a href={{ url_for('student_home_page') }}>Home</a></td>
+    <td><a href={{ url_for('student_jobs') }}>Jobs</a></td>
+    <td><a href="">Contact Us</a></td>
+    <td><div class="profpic"><a href={{ url_for('cv_form') }}><img class="profileforPic" src="../static/images/profile.png" height="45px" width="60px" alt="Profile"></a></div></td>
+    <td><a href={{ url_for('logout') }}><button class="logout">Log out</button></a></td>
+    </tr>
+</table>
+
 </div>
 <br>
 
 
 <div class="searchbar">
 
-    <form>
+    <form action="{{ url_for('student_jobs') }}" name="form">
         <table border="0">
             <tr>
                 <td width="450"></td>
-                <td><input type="text" size="70" name="searchInput" id="search"></td>
-                <td><button class="searchLogo"><img src="../static/images/searchlogo.png" width="40%" height="60%"></button> </td>
+                <td>
+{#                    <input type="text" size="70" name="searchInput" id="search">#}
+                    {{ form.search_text }}
+                </td>
+                <td>
+{#                    <button class="searchLogo"><img src="../static/images/searchlogo.png" width="40%" height="60%"></button> #}
+                    {{ form.search_button }}
+                </td>
             </tr>
         </table>
     </form>
 </div>
-
+<br>
 <div class="job_list">
     {% for job in jobs %}
-<div><p>{{ job.Company_Name }}<br>{{ job.Job_Designation }}<br>{{ job.Job_Description }}</p>
-<p><img src="{{ job.Company_Picture }}" height="" width="" alt=""></p></div>
+        <div class="jobs">
+        <div class="comp_img"><img src="{{ job.Company_Picture }}" height="" width="" alt=""></div>
+<div class="jobdesignation"><p><b> Designation: </b>{{ job.Job_Designation }}</p></div><div class="typeofjob"><p> <b>Type of job: </b>{{ job.Job_Designation }}</p> </div><div class="description_for"><p><b>Job Description: </b> {{ job.Job_Description }}</p></div>
+</div>
 {% endfor %}
+
+
+
+
+
+
+
 
 </div>
 </body>

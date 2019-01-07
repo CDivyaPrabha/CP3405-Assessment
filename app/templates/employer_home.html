@@ -7,13 +7,21 @@
     <title>JCUConnect</title>
 </head>
 <body>
+
 <div class="navbar">
-    <img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo">
-    <a href={{ url_for('employer_home_page') }}>Home</a>
-    <a href={{ url_for('display_employer_jobs') }}>Jobs</a>
-    <a href="">Contact Us</a>
-    <a href={{ url_for('logout') }}><button class="Sign out">Sign out</button></a>
+    <table class="navtab">
+<tr>
+	<td><div class="imgpla"><img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo"></div></td>
+    <td><a href={{ url_for('employer_home_page') }}>Home</a></td>
+    <td><a href={{ url_for('display_employer_jobs') }}>Jobs</a></td>
+    <td><a href="">Contact Us</a></td>
+    <td><a href={{ url_for('logout') }}><button class="Sign out">Sign out</button></a></td>
+    </tr>
+</table>
+
 </div>
+
+
 <div class="menuImage">
     <img src="../static/images/buildings.jpg" height="300px" width="100%" alt="Picture of buildings">
 </div>
