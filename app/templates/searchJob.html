@@ -30,6 +30,14 @@
     </form>
 </div>
 
+<div class="job_list">
+    {% for job in jobs %}
+    <p><img class="companyPic" src="{{ job.Company_Picture }}" height="" width="" alt=""></p>
+    <div class="jobDesc"><p>{{ job.Company_Name }}<br>{{ job.Job_Designation }}<br>{{ job.Job_Description }}</p>
+    </div>
+    {% endfor %}
+</div>
+
 </body>
 </html>
 
