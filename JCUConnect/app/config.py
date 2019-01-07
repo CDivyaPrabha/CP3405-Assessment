@@ -10,3 +10,4 @@ class Config(object):
     MLABDB1 = "User"
     MLABDB2 = "Job"
     MLABDB3 = "CV"
+    MLABDB4 = "JobCV"

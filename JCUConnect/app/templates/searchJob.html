@@ -17,31 +17,15 @@
 </div>
 <br>
 
-
-<div class="searchbar">
-
-    <form action="{{ url_for('student_jobs') }}" name="form">
-        <table border="0">
-            <tr>
-                <td width="450"></td>
-                <td>
-{#                    <input type="text" size="70" name="searchInput" id="search">#}
-                    {{ form.search_text }}
-                </td>
-                <td>
-{#                    <button class="searchLogo"><img src="../static/images/searchlogo.png" width="40%" height="60%"></button> #}
-                    {{ form.search_button }}
-                </td>
-            </tr>
-        </table>
-    </form>
-</div>
-
-<div class="job_list">
     {% for job in jobs %}
-<div><p>{{ job.Company_Name }}<br>{{ job.Job_Designation }}<br>{{ job.Job_Description }}</p>
-<p><img src="{{ job.Company_Picture }}" height="" width="" alt=""></p></div>
-{% endfor %}
-</div>
+        <div class="job_list">
+    <p><img class="companyPic" src="{{ job.Company_Picture }}" height="150" width="224" alt=""></p>
+            <div class="jobDesc"><p><b>{{ job.Company_Name }}</b>
+                    <a href={{ url_for('apply_for_job', job_id = job._id) }}><button>APPLY</button></a>
+                <br><br><b>{{ job.Job_Designation }}</b><br><br>{{ job.Job_Description }}</p>
+    </div>
+        </div>
+    {% endfor %}
+
 </body>
 </html>

@@ -574,3 +574,19 @@ input[type=submit], input[type=reset]{
     padding-top: 15px;
     padding-left: 190px;
 }
+
+.job_list{
+    border: 1px solid black;
+    width: 700px;
+    height: 200px;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+.job_list img{
+    margin-top: 20px;
+}
+.companyPic{
+    float:left;
+    padding-right: 20px;
+    padding-left: 20px;
+}

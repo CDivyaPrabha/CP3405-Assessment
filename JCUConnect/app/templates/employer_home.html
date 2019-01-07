@@ -21,6 +21,12 @@
 <div class="applicantlist">
 <h2>List of applications:</h2>
 
+    {% for cv in CVs %}
+        <h4>Name: </h4>{{ cv.Student_name }}
+        <h4>Description: </h4>{{ cv.Student_education }}{{ cv.Student_university }}{{ cv.Student_graduate_year }}
+        <a href="{{ url_for('viewCV', cv_id=cv._id) }}" target="_blank"><button>View CV</button></a>
+    {% endfor %}
+
 </div>
 </body>
 </html>
