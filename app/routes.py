@@ -108,12 +108,14 @@ def employer_home_page():
     CVs = []
     user = user_collection.find_one({"Username": user_name})
     user_id = user['_id']
-    job = job_collection.find_one({"Employer_ID": user_id})
-    job_id = ObjectId(job['_id'])
-    posts = jobcv_collection.find({"Job_ID": job_id})
-    for post in posts:
-        cv = cv_collection.find_one({"_id": post["CV_ID"]})
-        CVs.append(cv)
+    jobs = job_collection.find({"Employer_ID": user_id})
+    for job in jobs:
+        job_id = ObjectId(job['_id'])
+        posts = jobcv_collection.find({"Job_ID": job_id})
+        for post in posts:
+            cv = cv_collection.find_one({"_id": post["CV_ID"]})
+            cv['Job_Designation'] = job['Job_Designation']
+            CVs.append(cv)
     return render_template('employer_home.html', CVs=CVs)
 
 
