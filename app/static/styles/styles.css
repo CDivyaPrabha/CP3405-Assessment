@@ -431,7 +431,7 @@ input[type=reset] {
     overflow: hidden;
     padding: 10px;
     height: 170px;
-    width: 550px;
+    width: 600px;
     margin-right: 10px;
 }
 
@@ -440,7 +440,7 @@ input[type=reset] {
     float: right;
     width:25%;
     padding-left: 30px;
-    padding-right: 20px;
+    padding-right: 10px;
 
 }
 
