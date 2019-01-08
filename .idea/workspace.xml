@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52c23cc9-1022-4cf7-89b4-4ee5ebd34d9b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/static/images/skillsinterests.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/upload_images/SkyHigh_Technologies.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/apply_jobs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/centralisedCV.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/formCV.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/upload_images/Machine Learning A1 rubrics.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/upload_images/advertisementslogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/upload_images/headlinenews.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/upload_images/plano_jobsearch.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/upload_images/workexperience.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/employer_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/employer_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/form_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/form_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/homeStudent.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/homeStudent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/posting_jobs.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/posting_jobs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/searchJob.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/searchJob.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/signup.html" afterDir="false" />
-    </list>
+    <list default="true" id="52c23cc9-1022-4cf7-89b4-4ee5ebd34d9b" name="Default" comment="Final demo ready" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +9,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/CP3405_Assessment$main.coverage" NAME="main Coverage Results" MODIFIED="1546942131366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/JCUConnect$JCUConnect.coverage" NAME="JCUConnect Coverage Results" MODIFIED="1545924915045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/JCUConnect$forms.coverage" NAME="forms Coverage Results" MODIFIED="1545979444352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
     <SUITE FILE_PATH="coverage/JCUConnect$main.coverage" NAME="main Coverage Results" MODIFIED="1546740583717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -45,6 +22,16 @@
         <counts>
           <entry key="project.open.time.0" value="1" />
           <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="txt" value="16" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="16" />
         </counts>
       </usages-collector>
     </session>
@@ -111,7 +98,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -154,12 +141,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="MongoC&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -417,13 +405,20 @@
       <option name="project" value="LOCAL" />
       <updated>1546683658345</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Final demo ready">
+      <created>1546941468801</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1546941468801</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="720" extended-state="0" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25737706" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.254251" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -437,7 +432,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32993197" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -457,7 +452,8 @@
     <MESSAGE value="First demo errors corrected." />
     <MESSAGE value="Backend code for Post jobs story." />
     <MESSAGE value="Second Demo for Post jobs story." />
-    <option name="LAST_COMMIT_MESSAGE" value="Second Demo for Post jobs story." />
+    <MESSAGE value="Final demo ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final demo ready" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/static/images/jcuconnectlogo.png">
