@@ -8,11 +8,16 @@
 </head>
 <body>
 <div class="navbar">
-    <img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo">
-    <a href={{ url_for('employer_home_page') }}>Home</a>
-    <a href={{ url_for('display_employer_jobs') }}>Jobs</a>
-    <a href="">Contact Us</a>
-    <a href={{ url_for('logout') }}><button class="Sign out">Sign out</button></a>
+    <table class="navtab">
+<tr>
+	<td><div class="imgpla"><img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo"></div></td>
+    <td><a href={{ url_for('employer_home_page') }}>Home</a></td>
+    <td><a href={{ url_for('display_employer_jobs') }}>Jobs</a></td>
+    <td><a href="">Contact Us</a></td>
+    <td><a href={{ url_for('logout') }}><button class="Sign out">Sign out</button></a></td>
+    </tr>
+</table>
+
 </div>
 
 <form action="{{ url_for('postjob') }}" method="post" enctype='multipart/form-data'>
@@ -20,10 +25,10 @@
 <div class="jobform">
     {{ form.csrf_token }}
    <p class="comname_Cen">{{ form.company_name.label }}{{ form.company_name(size=30) }} </p>
-   <div class="picture">
-        <div>
+   <div class="designation">
             {{ form.job_designation.label }}{{ form.job_designation }}
         </div>
+    <div class="picture">
         <h3>{{ form.company_picture.label }}</h3>
 </div>
 <div class="description">
@@ -54,13 +59,6 @@
   <option value="Contract">Contract</option>
 </select>
 </div>
-
-{#<div class="type">#}
-{#<h3>{{ form.job_type.label }} </h3></div>#}
-{#<div class="typeofjob">#}
-{#    {{ form.job_type }}#}
-{##}
-{#</div>#}
 
 <input class="reset" type="reset">{{ form.post_job }}
 </div>

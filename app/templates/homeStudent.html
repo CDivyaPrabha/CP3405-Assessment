@@ -7,12 +7,17 @@
 </head>
 <body>
 <div class="navbar">
-    <img class="logo" src="../static/images/jcuconnectlogo.png" height="71px" width="150px" alt="JCUConnect Logo">
-    <a href={{ url_for('student_home_page') }}>Home</a>
-    <a href={{ url_for('student_jobs') }}>Jobs</a>
-    <a href="">Contact Us</a>
-{#    <a href="formCV.html"><img class="profile" src="../static/images/profile.png" height="45px" width="60px" alt="Profile"></a>#}
-    <a href={{ url_for('logout') }}><button class="logout">Log out</button></a>
+    <table class="navtab">
+<tr>
+	<td><div class="imgpla"><img class="logo" src="../static/images/jcuconnectlogo.png"  height="71px" width="180px" alt="JCUConnect Logo"></div></td>
+    <td><a href={{ url_for('student_home_page') }}>Home</a></td>
+    <td><a href={{ url_for('student_jobs') }}>Jobs</a></td>
+    <td><a href="">Contact Us</a></td>
+    <td><div class="profpic"><a href={{ url_for('cv_form') }}><img class="profileforPic" src="../static/images/profile.png" height="45px" width="60px" alt="Profile"></a></div></td>
+    <td><a href={{ url_for('logout') }}><button class="logout">Log out</button></a></td>
+    </tr>
+</table>
+
 </div>
 
 <div class="menuImage">
@@ -26,7 +31,7 @@
 <div class="requirements">
     <h3>JY Group (Sales & Marketing Manager) Requirements : </h3>
     <p>1. Singaporean, Age 21 and above (MAS Requirements)<br>
-    2. Minimum full certificate in GCE 'A' Level, International Baccalaureate Diploma qualification, diploma awarded by a polytechnic in Singapore<br><br>
+    2. Minimum full certificate in GCE 'A' Level, International Baccalaureate Diploma qualification, diploma awarded by a polytechnic in Singapore<br>
     3. Enthusiastic, strong integrity, self-motivated and outgoing personality<br>
     4. Candidates with the required certifications and/or relevant experience</p>
 </div>

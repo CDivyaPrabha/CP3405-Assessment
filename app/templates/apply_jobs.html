@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../static/styles/styles.css">
     <link rel="shortcut icon" href="../static/images/circle.png">
-    <title>JCUConnect</title>
+    <title>Apply for the job</title>
 </head>
 <body>
+
 <div class="navbar">
     <table class="navtab">
 <tr>
@@ -20,16 +21,28 @@
 </table>
 
 </div>
-<h1><center>List of jobs: </center></h1>
-    {% for job in jobs %}
-        <div class="job_list">
-    <p><img class="companyPic" src="{{ job.Company_Picture }}" height="150" width="224" alt=""></p>
-            <div class="jobDesc"><p><b>Company:</b> {{ job.Company_Name }}
-                    <a href={{ url_for('apply_for_job', job_id = job._id) }}><button>APPLY</button></a>
-                <br><br><b>{{ job.Job_Designation }}</b><br><br>{{ job.Job_Description }}</p>
+
+
+<div class="JobDescribToApply">
+    <H2 class="Job Name">{{ post.Company_Name }}</H2>
+    <div class="JOBdivide1">
+        <img class="imgDiv1" src="{{ post.Company_Picture }}">
+        <p><strong> Type of job: </strong> {{ post.Job_Type }}</p>
+
     </div>
-        </div>
-    {% endfor %}
+
+    <div class="JOBdivide2">
+        <h3>Designation: {{ post.Job_Designation }}</h3>
+        <h3>Job Description:</h3>
+        <p class="JobDescrib">{{ post.Job_Description }}</p>
+        <h3>Requirements:</h3>
+        <p class="jobRequire">{{ post.Job_Requirements }}</p>
+
+        <a href={{ url_for('sendCV', job_id=post._id) }} ><button class="ApplyButton">APPLY</button></a>
+
+    </div>
+
+</div>
 
 </body>
 </html>

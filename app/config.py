@@ -9,3 +9,5 @@ class Config(object):
     MLABURI = "mongodb://DivyaPrabha:practicala4@ds031972.mlab.com:31972/jcuconnect"
     MLABDB1 = "User"
     MLABDB2 = "Job"
+    MLABDB3 = "CV"
+    MLABDB4 = "JobCV"
