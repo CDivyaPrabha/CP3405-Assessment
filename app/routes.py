@@ -1,17 +1,19 @@
 import os
 from flask import render_template, flash, redirect, request, send_from_directory, url_for
 from app import app
-from app.forms import SignUpForm, StudentLoginForm, EmployerLoginForm, User, JobForm, CVForm, SearchField
+from app.forms import SignUpForm, StudentLoginForm, EmployerLoginForm, User, JobForm, CVForm
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash
-from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from werkzeug.utils import secure_filename
+from bson import ObjectId
 
 
 client = MongoClient("mongodb://DivyaPrabha:practicala4@ds031972.mlab.com:31972/jcuconnect")
 user_collection = client["jcuconnect"].User
 job_collection = client["jcuconnect"].Job
 cv_collection = client["jcuconnect"].CV
+jobcv_collection = client["jcuconnect"].JobCV
 
 global user_name
 
@@ -101,6 +103,28 @@ def login():
     return render_template('login.html', title='login', student_form=student_form, employer_form=employer_form)
 
 
+@app.route('/employer_home_page')
+def employer_home_page():
+    CVs = []
+    user = user_collection.find_one({"Username": user_name})
+    user_id = user['_id']
+    job = job_collection.find_one({"Employer_ID": user_id})
+    job_id = ObjectId(job['_id'])
+    posts = jobcv_collection.find({"Job_ID": job_id})
+    for post in posts:
+        cv = cv_collection.find_one({"_id": post["CV_ID"]})
+        CVs.append(cv)
+    return render_template('employer_home.html', CVs=CVs)
+
+
+@app.route('/display_employer_jobs')
+def display_employer_jobs():
+    user = user_collection.find_one({"Username": user_name})
+    user_id = user['_id']
+    posts = job_collection.find({"Employer_ID": user_id})
+    return render_template('posting_jobs.html', posts=posts)
+
+
 @app.route('/postjob', methods=['GET', 'POST'])
 def postjob():
     form = JobForm()
@@ -131,25 +155,6 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/display_file_image')
-def get_uploaded_file():
-    return send_from_directory(app.config['UPLOAD_FOLDER'],
-                               "Mobile_Computing_A2.png")
-
-
-@app.route('/display_employer_jobs')
-def display_employer_jobs():
-    user = user_collection.find_one({"Username": user_name})
-    user_id = user['_id']
-    posts = job_collection.find({"Employer_ID": user_id})
-    return render_template('posting_jobs.html', posts=posts)
-
-
-@app.route('/employer_home_page')
-def employer_home_page():
-    return render_template('employer_home.html')
-
-
 @app.route('/student_home_page')
 def student_home_page():
     return render_template('homeStudent.html')
@@ -157,17 +162,8 @@ def student_home_page():
 
 @app.route('/student_jobs')
 def student_jobs():
-    form = SearchField()
-    text = form.search_text.data
     jobs = job_collection.find()
-    if form.search_button.data:
-        jobs = []
-        posts = job_collection.find()
-        for post in posts:
-            for key, value in post:
-                if value.lower() == text.lower():
-                    jobs.append(post)
-    return render_template('searchJob.html', jobs=jobs, form=form)
+    return render_template('searchJob.html', jobs=jobs)
 
 
 @app.route('/cv_form', methods=['GET', 'POST'])
@@ -206,10 +202,39 @@ def cv_form():
 @app.route('/centralisedCV')
 def centralisedCV():
     user = user_collection.find_one({"Username": user_name})
-    print(user)
     user_id = user['_id']
     post = cv_collection.find_one({"Student_ID": user_id})
+    return render_template('centralisedCV.html', post=post)
+
+
+@app.route('/apply_for_job/<job_id>')
+def apply_for_job(job_id):
+    print(job_id)
+    job_object_id = ObjectId(job_id)
+    post = job_collection.find_one({"_id": job_object_id})
     print(post)
+    return render_template('apply_jobs.html', post=post)
+
+
+@app.route('/sendCV/<job_id>')
+def sendCV(job_id):
+    user = user_collection.find_one({"Username": user_name})
+    user_id = user['_id']
+    cv = cv_collection.find_one({"Student_ID": user_id})
+    cv_id = cv['_id']
+    job_object_id = ObjectId(job_id)
+    post_data = {
+        "Job_ID": job_object_id,
+        "CV_ID": cv_id
+    }
+    jobcv_collection.insert_one(post_data)
+    return redirect(url_for('student_jobs'))
+
+
+@app.route('/viewCV/<cv_id>')
+def viewCV(cv_id):
+    cv_object_id = ObjectId(cv_id)
+    post = cv_collection.find_one({"_id": cv_object_id})
     return render_template('centralisedCV.html', post=post)
 
 
@@ -218,4 +243,6 @@ def centralisedCV():
 def logout():
     logout_user()
     client.close()
+    global user_name
+    user_name=None
     return redirect(url_for('login'))

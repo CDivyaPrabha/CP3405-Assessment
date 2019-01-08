@@ -19,6 +19,7 @@
 </table>
 
 </div>
+
 <form action="{{ url_for('cv_form') }}" method="post" name="bioForm" id="bioForm">
 <div class="form">
     <div class="bioform">
@@ -29,7 +30,6 @@
           <tr>
           <td>{{ form.student_name.label }}</td>
           <td>
-{#              <input type="text" name="name" id="name" size="40"/>#}
               {{ form.student_name }}
           <br></td>
           </tr>
@@ -37,7 +37,6 @@
           <tr>
           <td>{{ form.student_phone.label }}</td>
           <td>
-{#              <input type="text" name="education" id="education" size="40"/>#}
               {{ form.student_phone }}
           <br></td>
           </tr>
@@ -45,7 +44,6 @@
           <tr>
           <td>{{ form.student_mobile.label }}</td>
           <td>
-{#              <input type="text" name="education" id="education" size="40"/>#}
               {{ form.student_mobile }}
           <br></td>
           </tr>
@@ -53,7 +51,6 @@
           <tr>
               <td>{{ form.student_email.label }}</td>
           <td>
-{#              <input type="text" name="university" id="university" size="40"/>#}
               {{ form.student_email }}
           <br></td>
           </tr>
@@ -61,7 +58,6 @@
           <tr>
           <td>{{ form.student_address.label }}</td>
           <td>
-{#              <input type="text" name="education" id="education" size="40"/>#}
               {{ form.student_address }}
           <br></td>
           </tr>
@@ -73,42 +69,36 @@
     <br><br><br>
 
     <div class="educationform">
-{#        <form action="" method="post" name="educationForm" id="educationForm">#}
         <img src="../static/images/education.png" width="340" height="119">
             <center><table width="477" border="0">
               <tbody>
           <tr>
           <td>{{ form.student_education.label }}</td>
         <td>
-{#            <input type="text" name="periodone" id="periodone" size="40"/>#}
             {{ form.student_education }}
             <br></td></tr>
 
           <tr>
           <td>{{ form.student_university.label }}</td>
         <td>
-{#            <input type="text" name="degreeone" id="degreeone" size="40"/>#}
             {{ form.student_university }}
             <br></td></tr>
 
           <tr>
           <td>{{ form.student_major.label }}</td>
         <td>
-{#            <input type="text" name="universityone" id="universityone" size="40"/>#}
             {{ form.student_major }}
         </td></tr><br>
 
           <tr>
           <td>{{ form.student_university_country.label }}</td>
         <td>
-{#            <input type="text" name="countryone" id="countryone" size="40"/>#}
             {{ form.student_university_country }}
             <br></td></tr>
 
               <tr>
           <td>{{ form.student_graduate_year.label }}</td>
         <td>
-{#            <input type="text" name="countryone" id="countryone" size="40"/>#}
             {{ form.student_graduate_year }}
             <br></td></tr>
 
@@ -119,28 +109,24 @@
         <br><br><br>
 
     <div class="workform">
-{#        <form action="" method="post" name="workForm" id="workForm">#}
         <img src="../static/images/workexperience.png" width="364" height="100">
             <center><table width="600" border="0">
               <tbody>
           <tr>
           <td>{{ form.student_work_experience.label }}</td>
         <td>
-{#            <input type="text" name="experienceone" id="experienceone" size="40"/>#}
             {{ form.student_work_experience }}
         </td><br>
 
           <tr>
           <td>{{ form.student_projects.label }}</td>
         <td>
-{#            <input type="text" name="experiencetwo" id="experiencetwo" size="40"/>#}
             {{ form.student_projects }}
         </td><br></tr>
 
           <tr>
           <td>{{ form.student_workshops.label }}</td>
         <td>
-{#            <input type="text" name="experiencethree" id="experiencethree" size="40"/>#}
             {{ form.student_workshops }}
         </td><br>
           </tr>
@@ -151,21 +137,18 @@
     <br><br><br>
 
     <div class="extrasForm">
-{#        <form action="" method="post" name="contactForm" id="contactForm">#}
         <img src="../static/images/skillsinterests.png" width="331" height="93">
             <center><table width="400" border="0">
               <tbody>
           <tr>
           <td>{{ form.student_skills.label }}</td>
           <td>
-{#              <input type="text" name="phone" id="phone" size="40"/></td>#}
               {{ form.student_skills }}
               <br></td></tr>
 
           <tr>
           <td>{{ form.student_interests.label }}</td>
           <td>
-{#              <input type="text" name="mobile" id="mobile" size="40"/>#}
               {{ form.student_interests }}
               <br></td></tr>
               </tbody>

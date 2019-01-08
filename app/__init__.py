@@ -4,7 +4,7 @@ from flask import Flask
 # Initialize application
 app = Flask(__name__, template_folder='templates')
 
-UPLOAD_FOLDER = 'static/upload_images'
+UPLOAD_FOLDER = '/Users/divya/Documents/JCUConnect/app/static/upload_images'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # app configuration

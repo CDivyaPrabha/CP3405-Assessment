@@ -8,22 +8,10 @@
 </head>
 <body>
 
-<div class="navbar">
-    <table class="navtab">
-<tr>
-	<td><div class="imgpla"><img class="logo" src="../static/images/jcuconnectlogo.png"  height="71px" width="180px" alt="JCUConnect Logo"></div></td>
-    <td><a href={{ url_for('student_home_page') }}>Home</a></td>
-    <td><a href={{ url_for('student_jobs') }}>Jobs</a></td>
-    <td><a href="">Contact Us</a></td>
-    <td><div class="profpic"><a href={{ url_for('cv_form') }}><img class="profileforPic" src="../static/images/profile.png" height="45px" width="60px" alt="Profile"></a></div></td>
-    <td><a href={{ url_for('logout') }}><button class="logout">Log out</button></a></td>
-    </tr>
-</table>
 
-</div>
+
 <div class="centraliseBar">
     <div class="studentPic">
-
     </div>
 
     <div class="personDet">
@@ -31,8 +19,6 @@
         <p>Education: {{ post.Student_education }} </p>
         <p>Graduation year: {{ post.Student_graduate_year }}</p>
     </div>
-
-{#    <button id="editCV" class="editCV">EDIT</button>#}
 
 </div>
 
@@ -43,7 +29,7 @@
     <h3></h3>
     <p><i>Phone: </i> {{ post.Student_phone }}</p>
     <p><i>Mobile: </i> {{ post.Student_mobile }}</p>
-    <p>Address: {{ post.Student_address }}</p>
+    <p><i>Address: </i>{{ post.Student_address }}</p>
     <p><i>Email: </i>{{ post.Student_email }}</p>
 
 </div>

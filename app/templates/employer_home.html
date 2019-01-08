@@ -7,7 +7,6 @@
     <title>JCUConnect</title>
 </head>
 <body>
-
 <div class="navbar">
     <table class="navtab">
 <tr>
@@ -20,14 +19,20 @@
 </table>
 
 </div>
-
-
 <div class="menuImage">
     <img src="../static/images/buildings.jpg" height="300px" width="100%" alt="Picture of buildings">
 </div>
 
 <div class="applicantlist">
 <h2>List of applications:</h2>
+
+    {% for cv in CVs %}
+        <div class="applicant">
+        <p><b>Name: </b>{{ cv.Student_name }}</p
+        <p><b>Education:</b> {{ cv.Student_education }}<br> <b>University: </b>{{ cv.Student_university }}<br><b> Graduated Year: </b>{{ cv.Student_graduate_year }}</p>
+        <a href="{{ url_for('viewCV', cv_id=cv._id) }}" target="_blank"><button>View CV</button></a>
+    </div>
+    {% endfor %}
 
 </div>
 </body>
