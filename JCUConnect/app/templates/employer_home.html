@@ -22,6 +22,8 @@
 <h2>List of applications:</h2>
 
     {% for cv in CVs %}
+        <img src="{{ cv.Student_picture }}">
+        <p><b>Applied for designation: </b>{{ cv.Job_Designation }}</p>
         <h4>Name: </h4>{{ cv.Student_name }}
         <h4>Description: </h4>{{ cv.Student_education }}{{ cv.Student_university }}{{ cv.Student_graduate_year }}
         <a href="{{ url_for('viewCV', cv_id=cv._id) }}" target="_blank"><button>View CV</button></a>

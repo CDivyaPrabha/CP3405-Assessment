@@ -5,6 +5,12 @@
     <link rel="stylesheet" href="../static/styles/styles.css">
     <link rel="shortcut icon" href="../static/images/circle.png">
     <title>JCUConnect</title>
+    <style>
+        .applied{
+            float: left;
+            color: green;
+        }
+    </style>
 </head>
 <body>
 <div class="navbar">
@@ -12,17 +18,22 @@
     <a href={{ url_for('student_home_page') }}>Home</a>
     <a href={{ url_for('student_jobs') }}>Jobs</a>
     <a href="">Contact Us</a>
-    <a href={{ url_for('cv_form') }}><img class="profile" src="../static/images/profile.png" height="45px" width="60px" alt="Profile"></a>
-    <a href={{ url_for('logout') }}><button class="logout">Logout</button></a>
+    <a href={{ url_for('redirect_cv') }}><img class="profile" src="../static/images/profile.png" height="45px" width="60px" alt="Profile"></a>
+    <a href={{ url_for('logout') }}><button class="logout">Sign out</button></a>
 </div>
 <br>
 
     {% for job in jobs %}
         <div class="job_list">
     <p><img class="companyPic" src="{{ job.Company_Picture }}" height="150" width="224" alt=""></p>
-            <div class="jobDesc"><p><b>{{ job.Company_Name }}</b>
-                    <a href={{ url_for('apply_for_job', job_id = job._id) }}><button>APPLY</button></a>
-                <br><br><b>{{ job.Job_Designation }}</b><br><br>{{ job.Job_Description }}</p>
+            <div class="jobDesc">
+                <p><b>{{ job.Company_Name }}</b></p>
+                {% if job.Applied=="Yes" %}
+                    <div class="applied">APPLIED</div>
+                {% else %}
+                <a href={{ url_for('apply_for_job', job_id = job._id) }}><button>APPLY</button></a>
+                {% endif %}
+                <br><br><b>{{ job.Job_Designation }}</b><br><br><p>{{ job.Job_Description }}</p>
     </div>
         </div>
     {% endfor %}
