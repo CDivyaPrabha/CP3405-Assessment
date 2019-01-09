@@ -631,10 +631,33 @@ input[type=submit], input[type=reset]{
     padding-left: 20px;
 }
 .applicant{
-    background-color: white;
+
     color: black;
     border: black thin solid;
     margin-left: 25%;
     width: 50%;
     margin-bottom: 10%;
 }
+
+.viewcv{
+    background-color: black;
+    color: #FFFFFF;
+
+}
+.jobdesp{
+    text-align: center;
+    width: 100%;
+    border: black thin solid;
+}
+.word{
+    background-color: black;
+    margin-left: 40%;
+    color: #FFFFFF;
+    margin-top: 0.1%;
+    margin-bottom: 0.1%;
+    width: 60.4%;
+}
+
+
+
+

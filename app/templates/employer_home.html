@@ -23,17 +23,25 @@
     <img src="../static/images/buildings.jpg" height="300px" width="100%" alt="Picture of buildings">
 </div>
 
+
 <div class="applicantlist">
 <h2>List of applications:</h2>
+    </div>
+
 
     {% for cv in CVs %}
         <div class="applicant">
+        <div class="jobdesp">
             <p><b>Applied for Designation: </b>{{ cv.Job_Designation}}</p>
-        <p><b>Name: </b>{{ cv.Student_name }}</p>
-        <p><b>Education:</b> {{ cv.Student_education }}<br> <b>University: </b>{{ cv.Student_university }}<br><b> Graduated Year: </b>{{ cv.Student_graduate_year }}</p>
-        <a href="{{ url_for('viewCV', cv_id=cv._id) }}" target="_blank"><button>View CV</button></a>
+        <p><b>Name: </b>{{ cv.Student_name }}<br>
+            <b>Education:</b> {{ cv.Student_education }}<br> <b>University: </b>{{ cv.Student_university }}<br><b> Graduated Year: </b>{{ cv.Student_graduate_year }}</p></div>
+<div class="viewcv">
+        <a href="{{ url_for('viewCV', cv_id=cv._id) }}" target="_blank"><h2 class="word">View CV</h2></a> {% endfor %}
     </div>
-    {% endfor %}
+
+        </div>
+
+
 
 </div>
 </body>
