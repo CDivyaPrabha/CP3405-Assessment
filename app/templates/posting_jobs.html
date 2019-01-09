@@ -19,6 +19,7 @@
 </table>
 
 </div>
+
 <div class="menuImage">
 <img src="../static/images/buildings.jpg" height="300" width="100" alt="Picture of buildings" style = width:100%>
 </div>
@@ -26,7 +27,6 @@
 <div class="posting_title">
 <h1>Posted Jobs</h1>
 </div>
-
 
 
 <a href={{ url_for('postjob') }}>
@@ -44,8 +44,6 @@
     <p><b> Designation: </b>{{ post.Job_Designation }}</p></div><div class="typeofjob"><p> <b>Type of job: </b>{{ post.Job_Type }}</p> </div><div class="description_for"><p><b>Job Description: </b> {{ post.Job_Description }}</p></div>
 </div>
 {% endfor %}
-
-
 
 
 </body>

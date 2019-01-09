@@ -22,7 +22,9 @@
 .textOnImage{
     position: absolute;
     top: 50%;
-    /*transform: translate(-50%, -50%);*/
+    left: 25%;
+    right: 25%;
+    transform: translate(-50%, -50%);
     font-size: 35px;
 }
 
@@ -57,18 +59,16 @@
     margin-right: 30px;
 }
 
-
-.navtab{
-    padding-left: 20%;
-
-}
-
 .imgpla{
     margin-top: -20px;
     margin-left: -30px;
 }
 
 
+.navtab{
+    padding-left: 20%;
+
+}
 .navbar{
     background-color: black;
     padding-top: 30px;
@@ -259,12 +259,13 @@
 
 .add_jobs{
 	margin-left: 5%;
-	width: 40%;
+	width: 87%;
 	border: thin #000000 solid;
 	text-align: center;
 	padding-top:2%;
 	padding-bottom: 2%;
     margin-bottom: 1%;
+
 }
 
 .jobs{
@@ -286,6 +287,7 @@
 .jobdesignation{
     float: left;
     width: 40%;
+    margin-left: 1%;
 
 }
 .typeofjob{
@@ -316,6 +318,12 @@
 .designation {
 	padding-left: 3.2%;
     padding-bottom: 3%;
+}
+.picture {
+	padding-left: 2%;
+	float: left;
+	width: 40%;
+
 }
 .picture {
 	padding-left: 2%;
@@ -427,6 +435,7 @@ input[type=reset] {
     margin-left: 30px;
 }
 
+
 .requirements{
     overflow: hidden;
     padding: 10px;
@@ -512,7 +521,7 @@ input[type=submit], input[type=reset]{
 }
 
 .JOBdivide1{
-    width: 350px;
+    width: 380px;
     height: 620px;
     float: left;
 }
@@ -537,31 +546,31 @@ input[type=submit], input[type=reset]{
 
 .JobDescribToApply{
     margin-left: 30px;
-    width: 950px;
+    width: 980px;
     height: 700px;
 }
 
 .imgDiv1{
-    width: 350px;
+    width: 380px;
     height: 250px;
 }
 
 .centraliseBar{
     height: 150px;
-    background-color: lightgrey;
+    background-color: cornflowerblue;
     position: relative;
 }
 
 .studentPic{
     width: 200px;
     height: 200px;
-    border-radius: 100px;
+    border-radius: 50%;
     border: 1px solid black;
     position: absolute;
     z-index: 10;
     margin-left: 100px;
     margin-top: 50px;
-    background-color: lightblue;
+    text-align: center;
 }
 
 .personDet{
@@ -569,7 +578,7 @@ input[type=submit], input[type=reset]{
     width: 300px;
     margin-left: 350px;
     position: absolute;
-    margin-top: 30px;
+    margin-top: 0.5%;
 }
 
 .editCV{
@@ -615,49 +624,56 @@ input[type=submit], input[type=reset]{
 }
 .job_list{
     border: 1px solid black;
-    width: 700px;
+    width: 900px;
     height: 200px;
     margin-top: 5%;
-    margin-left: 20%;
-    padding-bottom: 2%;
+    margin-left: 16%;
+    padding-bottom: 9%;
     padding-right: 2%;
+    margin-bottom: 3%;
 }
 .job_list img{
     margin-top: 20px;
+
+}
+
+.viewcv{
+    float: right;
+
+}
+
+.apply{
+  background-color:black;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+
+}
+
+.cv_list{
+    border: 1px solid black;
+    width: 900px;
+    height: 200px;
+    margin-top: 5%;
+    margin-left: 16%;
+    padding-bottom: 5%;
+    padding-right: 2%;
+    margin-bottom: 3%;
+}
+.view{
+    background-color:black;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
 }
 .companyPic{
     float:left;
     padding-right: 20px;
     padding-left: 20px;
 }
-.applicant{
-
-    color: black;
-    border: black thin solid;
-    margin-left: 25%;
-    width: 50%;
-    margin-bottom: 10%;
-}
-
-.viewcv{
-    background-color: black;
-    color: #FFFFFF;
-
-}
-.jobdesp{
-    text-align: center;
-    width: 100%;
-    border: black thin solid;
-}
-.word{
-    background-color: black;
-    margin-left: 40%;
-    color: #FFFFFF;
-    margin-top: 0.1%;
-    margin-bottom: 0.1%;
-    width: 60.4%;
-}
-
-
-
-

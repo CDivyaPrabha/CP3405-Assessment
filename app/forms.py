@@ -37,6 +37,8 @@ class JobForm(FlaskForm):
 
 
 class CVForm(FlaskForm):
+    student_picture = FileField('Picture: ', validators=[FileAllowed(['jpg', 'png'], 'Images only!'),
+                                                         FileRequired(u'File was empty!')])
     student_name = StringField('Full Name: ', validators=[DataRequired()])
     student_phone = StringField('Phone: ')
     student_mobile = StringField('Mobile: ', validators=[DataRequired()])

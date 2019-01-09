@@ -5,6 +5,12 @@
     <link rel="stylesheet" href="../static/styles/styles.css">
     <link rel="shortcut icon" href="../static/images/circle.png">
     <title>JCUConnect</title>
+    <style>
+        .applied{
+            float: left;
+            color: green;
+        }
+    </style>
 </head>
 <body>
 <div class="navbar">
@@ -20,14 +26,24 @@
 </table>
 
 </div>
-<h1><center>List of jobs: </center></h1>
+<br>
+<h2><center>List of jobs: </center></h2>
     {% for job in jobs %}
         <div class="job_list">
-    <p><img class="companyPic" src="{{ job.Company_Picture }}" height="150" width="224" alt=""></p>
-            <div class="jobDesc"><p><b>Company:</b> {{ job.Company_Name }}
-                    <a href={{ url_for('apply_for_job', job_id = job._id) }}><button>APPLY</button></a>
-                <br><br><b>{{ job.Job_Designation }}</b><br><br>{{ job.Job_Description }}</p>
-    </div>
+    <p><img class="companyPic" src="{{ job.Company_Picture }}" height="170" width="224" alt=""></p>
+            <div class="jobDesc">
+                <p><b>Company Name: </b>{{ job.Company_Name }}</p>
+
+                <b>Designation: </b>{{ job.Job_Designation }}<br><p><b>Description: </b></p><p><center>{{ job.Job_Description }}</center></p>
+            </div>
+<div class="viewcv">
+            {% if job.Applied=="Yes" %}
+                    <div class="applied">APPLIED</div>
+                {% else %}
+                <a href={{ url_for('apply_for_job', job_id = job._id) }}><h2 class="apply">Apply</h2></a>
+                {% endif %}
+</div>
+            </div>
         </div>
     {% endfor %}
 

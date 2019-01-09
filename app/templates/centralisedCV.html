@@ -5,13 +5,31 @@
     <link rel="stylesheet" href="../static/styles/styles.css">
     <link rel="shortcut icon" href="../static/images/circle.png">
     <title>Your CV</title>
+    <style>
+        .cv_profile{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-position: 50% 50%;
+            background-size: cover;
+            border-radius: 50%;
+            min-height: 100%;
+            min-width: 100%;
+        }
+        body{
+            margin: 5%;
+            border: black;
+            border-style: inset;
+        }
+        .personDet{
+
+        }
+    </style>
 </head>
 <body>
-
-
-
 <div class="centraliseBar">
     <div class="studentPic">
+        <img class="cv_profile" src="{{ post.Student_picture }}">
     </div>
 
     <div class="personDet">
