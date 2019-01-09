@@ -185,6 +185,7 @@ def student_jobs():
     jobs = job_collection.find()
     user = user_collection.find_one({"Username": user_name})
     user_id = user['_id']
+    flag = 0
     # find CV for current student id
     cv = cv_collection.find_one({"Student_ID": user_id})
     if cv is not None:
@@ -197,10 +198,13 @@ def student_jobs():
             for temp_job in temp_jobs:
                 # check if the student has already applied to the job
                 if temp_job['CV_ID'] == cv_id:
-                    job['Applied'] = "Yes"
-                else:
-                    job['Applied'] = "No"
+                    flag = 1
+            if flag == 1:
+                job['Applied'] = "Yes"
+            else:
+                job['Applied'] = "No"
             jobs.append(job)
+            flag = 0
     return render_template('searchJob.html', jobs=jobs)
 
 
