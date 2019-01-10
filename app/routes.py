@@ -15,8 +15,6 @@ job_collection = client["jcuconnect"].Job
 cv_collection = client["jcuconnect"].CV
 jobcv_collection = client["jcuconnect"].JobCV
 
-global user_name
-
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
@@ -46,7 +44,7 @@ def index():
 def signup():
     form = SignUpForm()
     if request.method == 'POST' and form.validate_on_submit():
-        # check if user_name or email is taken
+        # check if username or email is taken
         user = user_collection.find_one({"Username": form.username.data})
         if user and User.validate_login(user['Password'], form.password.data):
             flash("User already exists!", category='error')
@@ -65,9 +63,6 @@ def signup():
         user_obj = User(user['Username'])
         login_user(user_obj)
         flash("Logged in successfully!", category='success')
-        # make user_name global to be shared by all functions
-        global user_name
-        user_name = form.username.data
         if user['Designation']=="1":
             return redirect(url_for('student_home_page'))  # go to student home page
         elif user['Designation']=="2":
@@ -79,7 +74,6 @@ def signup():
 def login():
     student_form = StudentLoginForm()
     employer_form = EmployerLoginForm()
-    global user_name
 
     if request.method == 'POST':
 
@@ -90,7 +84,6 @@ def login():
                 user_obj = User(user['Username'])
                 login_user(user_obj)
                 flash("Logged in successfully!", category='success')
-                user_name = student_form.student_username.data
                 return redirect(url_for('student_home_page'))  # go to student home page
             flash("Wrong username or password!", category='error')
 
@@ -101,7 +94,6 @@ def login():
                 user_obj = User(user['Username'])
                 login_user(user_obj)
                 flash("Logged in successfully!", category='success')
-                user_name = employer_form.employer_username.data
                 return redirect(url_for('employer_home_page'))  # go to employer home page
             flash("Wrong username or password!", category='error')
 
@@ -111,6 +103,7 @@ def login():
 @app.route('/employer_home_page')
 def employer_home_page():
     CVs = []
+    user_name = current_user.get_id()
 
     # find current user _id
     user = user_collection.find_one({"Username": user_name})
@@ -132,6 +125,7 @@ def employer_home_page():
 @app.route('/display_employer_jobs')
 def display_employer_jobs():
     # find current user _id
+    user_name = current_user.get_id()
     user = user_collection.find_one({"Username": user_name})
     user_id = user['_id']
 
@@ -143,6 +137,7 @@ def display_employer_jobs():
 @app.route('/postjob', methods=['GET', 'POST'])
 def postjob():
     form = JobForm()
+    user_name = current_user.get_id()
     if request.method == 'POST' and form.validate_on_submit():
 
         # check if uploaded image is png, jpeg or jpg type
@@ -183,6 +178,7 @@ def student_home_page():
 @app.route('/student_jobs')
 def student_jobs():
     jobs = job_collection.find()
+    user_name = current_user.get_id()
     user = user_collection.find_one({"Username": user_name})
     user_id = user['_id']
     flag = 0
@@ -210,6 +206,7 @@ def student_jobs():
 
 @app.route('/redirect_cv')
 def redirect_cv():
+    user_name = current_user.get_id()
     user = user_collection.find_one({"Username": user_name})
     user_id = user['_id']
     post = cv_collection.find_one({"Student_ID": user_id})
@@ -222,6 +219,7 @@ def redirect_cv():
 @app.route('/cv_form', methods=['GET', 'POST'])
 def cv_form():
     form = CVForm()
+    user_name = current_user.get_id()
     if request.method == "POST" and form.validate_on_submit():
         user = user_collection.find_one({"Username": user_name})
         user_id = user['_id']
@@ -263,6 +261,7 @@ def cv_form():
 @app.route('/centralisedCV')
 def centralisedCV():
     # find cv according to student id
+    user_name = current_user.get_id()
     user = user_collection.find_one({"Username": user_name})
     user_id = user['_id']
     post = cv_collection.find_one({"Student_ID": user_id})
@@ -279,6 +278,7 @@ def apply_for_job(job_id):
 
 @app.route('/sendCV/<job_id>')
 def sendCV(job_id):
+    user_name = current_user.get_id()
     user = user_collection.find_one({"Username": user_name})
     user_id = user['_id']
     # find CV according to student id
@@ -308,6 +308,4 @@ def logout():
     # log the user out
     logout_user()
     client.close()
-    global user_name
-    user_name=None
     return redirect(url_for('login'))
