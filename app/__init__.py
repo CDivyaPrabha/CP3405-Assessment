@@ -5,7 +5,9 @@ from flask import Flask
 app = Flask(__name__, template_folder='templates')
 
 #Specify folder to which the uploaded images will be saved
-UPLOAD_FOLDER = '/Users/divya/Documents/JCUConnect/app/static/upload_images'
+my_path = os.path.abspath(os.path.dirname(__file__))
+path = os.path.join(my_path, "static/upload_images")
+UPLOAD_FOLDER = path
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # app configuration
